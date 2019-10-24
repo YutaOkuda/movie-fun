@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import java.util.Map;
 
 @Controller
-@Transactional
 public class HomeController {
     @Autowired
     private MoviesBean moviesBean;

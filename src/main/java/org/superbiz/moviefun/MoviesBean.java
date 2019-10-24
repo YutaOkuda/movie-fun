@@ -41,10 +41,12 @@ public class MoviesBean {
         entityManager.persist(movie);
     }
 
+    @Transactional
     public void editMovie(Movie movie) {
         entityManager.merge(movie);
     }
 
+    @Transactional
     public void deleteMovie(Movie movie) {
         entityManager.remove(movie);
     }
