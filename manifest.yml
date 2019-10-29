@@ -1,0 +1,18 @@
+applications:
+- name: moviefun
+  path: target/moviefun.war
+  buildpacks:
+  - https://github.com/cloudfoundry/java-buildpack.git
+  disk_quota: 1G
+  env:
+    JAVA_OPTS: -Dlogging.level.org.springframework=DEBUG
+  instances: 2
+  memory: 1G
+  routes:
+  - route: moviefun-boring-platypus.apps.evans.pal.pivotal.io
+  services:
+  - movies-mysql
+  - photo-storage
+  - paper-trail
+  - rabbit
+  stack: cflinuxfs3

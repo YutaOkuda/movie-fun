@@ -69,6 +69,10 @@ public class AlbumsUpdater {
             .stream()
             .filter(album -> albumsToHave.stream().noneMatch(album::isEquivalent));
 
+        Stream<Album> albumsToDelete1 = albumsWeHave
+                .stream()
+                .filter(album -> albumsToHave.stream().noneMatch(album::isEquivalent));
+
         albumsToDelete.forEach(albumsBean::deleteAlbum);
     }
 
